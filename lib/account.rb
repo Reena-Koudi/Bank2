@@ -18,6 +18,10 @@ class Account
     @transactions.push(date: transaction_date, debit: amount, balance: @balance)
   end
 
+  def transactions
+    @transactions
+  end
+
   private
   def transaction_date
     Time.now.strftime('%d/%m/%Y')

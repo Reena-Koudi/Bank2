@@ -20,4 +20,11 @@ describe Account do
     end
   end
 
+  describe '#transactions' do
+    it 'transactions could be fetched' do
+      account.deposit(200)
+      expect(account.transactions).to eq([{:date=>"24/04/2018", :credit=>200, :balance=>200}])
+    end
+  end
+
 end
