@@ -14,4 +14,9 @@ class Account
     raise 'Balance is zero' if @balance == 0
     @balance -= amount
   end
+
+  private
+  def trasaction_date
+    Time.now.strftime('%d/%m/%Y')
+  end
 end
