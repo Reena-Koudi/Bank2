@@ -22,6 +22,10 @@ class Account
     @transactions
   end
 
+  def balance
+    @balance
+  end
+
   private
   def transaction_date
     Time.now.strftime('%d/%m/%Y')
