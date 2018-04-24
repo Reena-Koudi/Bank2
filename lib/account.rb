@@ -11,6 +11,7 @@ class Account
   end
 
   def withdrawal(amount)
+    raise 'Balance is zero' if @balance == 0
     @balance -= amount
   end
 end
