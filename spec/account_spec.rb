@@ -9,4 +9,10 @@ describe Account do
     end
   end
 
+  describe '#withdrawal' do
+    it 'deducts amount from the balance' do
+      account.deposit(500)
+      expect(account.withdrawal(200)).to eq(300)
+    end
+  end
 end
