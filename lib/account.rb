@@ -1,25 +1,24 @@
-class Account
+require_relative 'transactions'
+require_relative 'print'
 
+class Account
+  attr_accessor :transaction
   DEFAULT_BALANCE = 0
 
-  def initialize(balance = DEFAULT_BALANCE)
+  def initialize(balance = DEFAULT_BALANCE, transaction = Transaction.new)
     @balance = balance
-    @transactions = []
+    @transaction = transaction
   end
 
-  def deposit(amount)
-    @balance += amount
-    @transactions.push(date: transaction_date, credit: amount, balance: @balance)
+  def deposit(credit)
+    @balance += credit
+    @transaction.record_credit(credit, @balance)
   end
 
-  def withdrawal(amount)
+  def withdrawal(debit)
     raise 'Balance is zero' if @balance == 0
-    @balance -= amount
-    @transactions.push(date: transaction_date, debit: amount, balance: @balance)
-  end
-
-  def transactions
-    @transactions
+    @balance -= debit
+    @transaction.record_debit(debit, @balance)
   end
 
   def balance
