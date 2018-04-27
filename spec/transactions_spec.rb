@@ -8,7 +8,8 @@ describe Transaction do
   describe '#record_credit' do
     it 'records the credit transaction' do
       transaction.record_credit(200, 200)
-      result = [{:date=>"25/04/2018", :credit=>"200.00", :balance=>"200.00"}]
+      date = Date.today.strftime('%d/%m/%Y')
+      result = [{:date=>date, :credit=>"200.00", :balance=>"200.00"}]
       expect(transaction.record).to eq(result)
     end
   end
@@ -16,7 +17,8 @@ describe Transaction do
   describe '#record_debit' do
     it 'records the debit transaction' do
       transaction.record_debit(200, 200)
-      result = [{:date=>"25/04/2018", :debit=>"200.00", :balance=>"200.00"}]
+      date = Date.today.strftime('%d/%m/%Y')
+      result = [{:date=>date, :debit=>"200.00", :balance=>"200.00"}]
       expect(transaction.record).to eq(result)
     end
   end

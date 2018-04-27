@@ -16,7 +16,7 @@ class Account
   end
 
   def withdrawal(debit)
-    raise 'Balance is zero' if @balance == 0
+    raise 'Insufficient balance' if @balance < debit
     @balance -= debit
     @transaction.record_debit(debit, @balance)
   end

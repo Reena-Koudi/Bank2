@@ -22,7 +22,7 @@ describe Account do
     end
 
     it 'raises an error for the withdrawal if balance is zero' do
-      expect{ account.withdrawal(100) }.to raise_error 'Balance is zero'
+      expect{ account.withdrawal(100) }.to raise_error 'Insufficient balance'
     end
   end
 
