@@ -33,7 +33,13 @@ I would like to view a statement that prints the date, transaction amount and ba
 As a user
 So that I don't have to deal with PSQL etc
 I don't want to use a database
+
 ```
+
+## Run
+
+<img width="918" alt="screen shot 2018-04-26 at 11 37 11" src="https://user-images.githubusercontent.com/34460965/39301754-39d82a7a-4948-11e8-838b-716a5a7691bd.png">
+
 ## Acceptance Criteria
 
 Given a client makes a deposit of 1000 on 10-01-2012  
